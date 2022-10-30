@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navegacion"
+    app:startDestination="@id/login">
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.ejercicioparcial.fragmentos.Login"
+        android:label="Login" >
+        <action
+            android:id="@+id/action_login_to_lista2"
+            app:destination="@id/lista" />
+    </fragment>
+    <fragment
+        android:id="@+id/lista"
+        android:name="com.example.ejercicioparcial.fragmentos.Home"
+        android:label="fragment_lista"
+        tools:layout="@layout/fragment_lista" >
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="password"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_lista_to_detalle"
+            app:destination="@id/detalle" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalle"
+        android:name="com.example.ejercicioparcial.fragmentos.Detalle"
+        android:label="fragment_detalle"
+        tools:layout="@layout/fragment_detalle" >
+        <argument
+            android:name="producto"
+            app:argType="com.example.ejercicioparcial.entidades.Producto" />
+    </fragment>
+</navigation>
